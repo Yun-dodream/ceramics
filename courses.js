@@ -11,7 +11,8 @@ window.courseConfig = {
     schedule: "Every Thursday for 6 Weeks",
     time: "6:00 PM – 8:00 PM",
     capacity: "Max 4 students",
-    price: "$320 + GST",
+    priceAmount: "$320",
+    priceSuffix: "+ GST",
     includes: "Clay, tools, firing & instruction"
   },
   dropIn: { typeAPrice: "$60 + GST / person", typeBPrice: "$30 + GST / person" },

@@ -86,3 +86,525 @@ h1,h2,h3 { font-family:"Cormorant Garamond",Georgia,serif; font-weight:600; }
 .payment-section p:last-child { margin-bottom:0; color:var(--muted); }
 @media (max-width:900px) { .site-header nav { gap:12px; } nav a { font-size:14px; } .regular-detail-cards { grid-template-columns:1fr; } }
 @media (max-width:760px) { .site-header { height:88px; } .brand { width:185px; } .brand img { height:68px; } .card-grid,.event-grid { grid-template-columns:1fr; gap:22px; } .class-card,.event-card { width:100%; } .class-card img,.event-card img { height:260px; } .regular-facts p { grid-template-columns:1fr; gap:5px; } .event-notes { padding:18px; text-align:left; } }
+
+/* Global neutral palette and navigation refinement */
+:root { --ink:#2B2D31; --paper:#F8F6F0; --clay:#2B2D31; --line:#DCDFE3; --muted:#4A4D52; --dark:#2B2D31; --accent-red:#2B2D31; --accent-mint:#E8F3EE; --accent-yellow:#FFF8E7; }
+body { background:#F8F6F0; color:#2B2D31; }
+.site-header { height:96px; padding-block:7px; gap:20px; background:#FFFFFF; border-color:#DCDFE3; }
+.brand { width:300px; }
+.brand img { height:82px; filter:none; }
+.site-header nav { align-items:center; gap:clamp(18px,2vw,34px); margin-left:auto; }
+.site-header nav > a:not(.button) { color:#2B2D31; font-size:17px; }
+.site-header nav a.active { color:#2B2D31; text-decoration-color:var(--accent-red); text-decoration-thickness:2px; text-underline-offset:6px; }
+.site-header .header-book-now { min-height:42px; margin-left:2px; padding:0 20px; background:var(--accent-red); color:#FFFFFF; border-radius:4px; font-size:14px; }
+.button { background:var(--accent-red); color:#FFFFFF; }
+.eyebrow,.text-link span { color:var(--accent-red); }
+.hero-overlay { background:linear-gradient(90deg,rgba(43,45,49,.74),rgba(43,45,49,.18)); }
+.hero h1 span,.hero-eyebrow,.hero .text-link span { color:#FFFFFF; }
+.programs-section,.one-day-section { background:#F8F6F0; color:#2B2D31; }
+.section-heading .eyebrow,.section-heading p:last-child { color:#4A4D52; }
+.program-card,.one-day-options article,.class-card,.payment-section { background:#FFFFFF; border:1px solid #DCDFE3; }
+.location-section { background:#EAECEE; }
+.notice,.refund-policy { background:var(--accent-mint); border-left-color:var(--accent-red); }
+.booking-form { background:#EAECEE; }
+.booking-form input,.booking-form select,.booking-form textarea { background:#FFFFFF; border-color:#DCDFE3; }
+.booking-form input:focus,.booking-form select:focus,.booking-form textarea:focus { outline-color:#2B2D31; }
+.form-alert { color:#2B2D31; background:#EAECEE; }
+.sessions-line { border-color:#DCDFE3; }
+.session-times span { color:#4A4D52; background:#EAECEE; border-color:#DCDFE3; }
+.one-day-summary { background:var(--accent-yellow); border-color:#DCDFE3; }
+.one-day-summary p { border-color:#DCDFE3; }
+.events-section { background:#EAECEE; color:#2B2D31; }
+.events-section .eyebrow,.event-policy { color:#4A4D52; }
+.event-card,.event-notes { background:#FFFFFF; color:#2B2D31; border-color:#DCDFE3; }
+.event-card p,.event-notes { color:#4A4D52; }
+.one-day-notes { padding:14px 16px; background:var(--accent-mint); border:1px solid #DCDFE3; }
+.event-notes { background:var(--accent-yellow); }
+footer { color:#71767A; background:#F8F6F0; }
+
+/* Regular course: cream, white, grey, and charcoal only */
+.regular-section { display:grid; grid-template-columns:minmax(300px,.9fr) minmax(440px,1.1fr); gap:28px; align-items:stretch; max-width:1240px; margin:72px auto; padding:28px; background:#FFFFFF; color:#2B2D31; border:1px solid #DCDFE3; border-radius:18px; }
+.regular-summary { display:flex; flex-direction:column; min-width:0; }
+.regular-kicker { margin:0 0 10px; color:var(--accent-red); font:700 12px/1.2 "DM Sans",sans-serif; letter-spacing:.13em; }
+.regular-section h2 { margin:0 0 16px; color:#2B2D31; font:600 clamp(38px,4vw,58px)/.98 "Cormorant Garamond",Georgia,serif; }
+.regular-price { width:max-content; margin:0 0 16px; padding:10px 15px; color:#2B2D31; background:var(--accent-yellow); border:1px solid #DCDFE3; border-radius:8px; font:800 28px/1 "DM Sans",sans-serif; letter-spacing:-.03em; }
+.regular-price::before { content:"COURSE FEE"; display:block; margin-bottom:5px; color:#71767A; font:700 10px/1 "DM Sans",sans-serif; letter-spacing:.11em; }
+.regular-description { max-width:48ch; margin:0 0 18px; color:#4A4D52; font-size:15px; line-height:1.58; }
+.regular-feature-image { height:210px; margin-top:auto; object-fit:cover; object-position:center; border:1px solid #DCDFE3; border-radius:12px; filter:saturate(.8) contrast(.98); }
+.regular-content { display:grid; align-content:start; gap:12px; }
+.regular-content-box { padding:18px; background:#EAECEE; border:1px solid #DCDFE3; border-radius:12px; }
+.regular-content-box h3 { margin:0 0 13px; color:#2B2D31; font:700 13px/1.2 "DM Sans",sans-serif; letter-spacing:.1em; text-transform:uppercase; }
+.regular-overview-list { display:grid; gap:9px; margin:0; }
+.regular-overview-list div { display:grid; grid-template-columns:108px 1fr; gap:14px; padding-bottom:9px; border-bottom:1px solid #DCDFE3; }
+.regular-overview-list div:last-child { padding-bottom:0; border-bottom:0; }
+.regular-overview-list dt { color:#71767A; font:700 11px/1.45 "DM Sans",sans-serif; letter-spacing:.08em; text-transform:uppercase; }
+.regular-overview-list dd { margin:0; color:#4A4D52; font-size:14px; line-height:1.45; }
+.regular-overview-list div:first-child dd [data-course="regular.dates"] { display:inline-block; padding:3px 7px; color:#2B2D31; background:var(--accent-yellow); border-radius:4px; font-weight:800; }
+.regular-overview-list div:nth-child(2) dd { display:inline-block; padding:3px 7px; color:#2B2D31; background:var(--accent-mint); border-radius:4px; font-weight:700; }
+.regular-curriculum-list { display:grid; gap:8px; margin:0; padding:0; list-style:none; }
+.regular-curriculum-list li { display:grid; grid-template-columns:100px 1fr; gap:13px; padding-bottom:8px; color:#4A4D52; border-bottom:1px solid #DCDFE3; font-size:14px; line-height:1.4; }
+.regular-curriculum-list li:last-child { padding-bottom:0; border-bottom:0; }
+.regular-curriculum-list strong { color:#2B2D31; font-size:13px; }
+.regular-policy-note { margin:0; color:var(--accent-red); font-size:12px; font-weight:700; line-height:1.45; }
+.location-section .location-book-button { margin-top:22px; min-height:44px; padding:0 20px; border-radius:4px; }
+@media (max-width:980px) { .site-header { height:92px; } .brand { width:250px; } .brand img { height:76px; } .site-header nav { gap:14px; } .site-header nav > a:not(.button) { font-size:15px; } .regular-section { grid-template-columns:1fr; max-width:760px; } .regular-feature-image { height:240px; } }
+@media (max-width:760px) { .site-header { height:84px; gap:10px; } .brand { width:150px; } .brand img { height:66px; } .site-header nav { display:none; } .site-header .header-book-now { min-height:38px; margin-left:auto; padding:0 12px; font-size:13px; } .regular-section { margin:42px 16px; padding:20px; } .regular-feature-image { height:205px; } .regular-overview-list div,.regular-curriculum-list li { grid-template-columns:1fr; gap:4px; } }
+
+/* Unified typography, compact navigation, and neutral UI refinements */
+:root {
+  --ink:#2B2D31;
+  --paper:#F8F6F0;
+  --surface:#FFFFFF;
+  --line:#DCDFE3;
+  --muted:#4A4D52;
+  --soft-mint:#E8F3EE;
+  --soft-yellow:#FFF8E7;
+}
+body, button, input, select, textarea { font-family:"DM Sans",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+h1,h2,h3,.program-card h3,.class-card h3,.event-card h3 { font-family:"Cormorant Garamond",Georgia,serif; font-weight:600; }
+.eyebrow,.sessions-label,.regular-kicker,.regular-content-box h3,.regular-overview-list dt,.regular-price::before {
+  font-family:"DM Sans",system-ui,sans-serif;
+}
+.one-day-summary b,.course-plan b,.regular-price-card span,.regular-facts b { font-family:"DM Sans",system-ui,sans-serif; }
+
+/* Keep all desktop navigation controls inside one centered 1,200px row. */
+.site-header {
+  width:min(1200px,calc(100% - 32px));
+  height:88px;
+  margin:0 auto;
+  padding:6px 0;
+  display:grid;
+  grid-template-columns:210px minmax(0,1fr) auto;
+  column-gap:16px;
+  background:var(--surface);
+}
+.brand { width:210px; }
+.brand img { height:74px; }
+.site-header nav { min-width:0; margin:0; justify-content:center; gap:clamp(9px,1.15vw,18px); }
+.site-header nav > a:not(.button) { font-size:14px; letter-spacing:.005em; }
+.site-header nav a.active { color:var(--ink); text-decoration-color:var(--muted); }
+.site-header .header-book-now { min-height:40px; margin:0; padding:0 17px; background:var(--button-mint); color:#fff; font:700 14px "DM Sans",system-ui,sans-serif; }
+
+/* Red remains exclusive to the logo and header Book Now CTA. */
+.button { background:var(--ink); color:#fff; font-family:"DM Sans",system-ui,sans-serif; }
+.eyebrow,.text-link span,.regular-kicker,.instagram-link { color:var(--muted) !important; }
+.notice,.refund-policy { border-left:1px solid var(--line); background:var(--soft-mint); }
+.regular-policy-note { color:var(--muted); }
+.location-section .location-book-button { background:var(--ink); }
+
+/* Hero: light accent badge and a clear, accessible primary action. */
+.hero-badge {
+  display:inline-flex;
+  width:max-content;
+  margin:0 0 16px;
+  padding:7px 11px;
+  border:1px solid rgba(255,255,255,.45);
+  border-radius:999px;
+  background:var(--soft-yellow);
+  color:var(--ink) !important;
+  font:700 11px/1.2 "DM Sans",system-ui,sans-serif;
+  letter-spacing:.08em;
+}
+.hero .button { margin-top:2px; background:#fff; color:var(--ink); }
+.hero .button:hover { background:var(--soft-mint); }
+
+/* Event prices read as scan-friendly fee tags; notice spans both cards. */
+.event-card .event-fees { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:19px 0 0; }
+.event-fee { display:grid; gap:4px; padding:11px; border:1px solid var(--line); border-radius:8px; background:var(--soft-mint); }
+.event-fee:nth-child(2) { background:var(--soft-yellow); }
+.event-fee b { color:var(--muted); font-size:11px; letter-spacing:.06em; text-transform:uppercase; }
+.event-fee span { color:var(--ink); font-size:15px; font-weight:700; line-height:1.3; }
+.event-notes { width:100%; max-width:none; padding:24px 28px; border:1px solid var(--line); background:var(--soft-yellow); color:var(--muted); font-size:15px; line-height:1.55; text-align:left; }
+
+/* Directions and booking CTA form a dedicated responsive action row. */
+.location-section > div { display:flex; flex-direction:column; align-items:flex-start; }
+.location-actions { display:flex; align-items:center; flex-wrap:wrap; gap:18px; margin-top:4px; }
+.location-section .location-book-button { margin:0; min-height:44px; }
+
+@media (max-width:1100px) {
+  .site-header { grid-template-columns:180px minmax(0,1fr) auto; column-gap:10px; }
+  .brand { width:180px; }
+  .brand img { height:68px; }
+  .site-header nav { gap:9px; }
+  .site-header nav > a:not(.button) { font-size:13px; }
+  .site-header .header-book-now { padding:0 13px; font-size:13px; }
+}
+@media (max-width:760px) {
+  .site-header { width:100%; height:78px; padding:6px 18px; display:flex; }
+  .brand { width:158px; }
+  .brand img { height:62px; }
+  .location-actions { width:100%; align-items:stretch; flex-direction:column; gap:14px; }
+  .location-actions .text-link { padding-top:3px; }
+  .location-section .location-book-button { width:100%; }
+  .event-card .event-fees { grid-template-columns:1fr; }
+  .event-notes { padding:19px; }
+}
+
+/* Regression fixes: the header belongs to the page flow and never follows content. */
+.site-header { position:relative; top:auto; z-index:auto; }
+
+/* The studio identifier is quiet; the registration state is the one yellow badge. */
+.hero-badge { background:var(--soft-mint); border-color:rgba(255,255,255,.45); }
+.registration-badge {
+  display:block;
+  width:max-content;
+  margin-top:14px;
+  padding:8px 12px;
+  border:1px solid #E8D7A7;
+  border-radius:999px;
+  background:var(--soft-yellow);
+  color:#2B2D31 !important;
+  font:700 14px/1.15 "DM Sans",system-ui,sans-serif;
+  letter-spacing:.02em;
+}
+
+/* Friendly content actions use light surfaces; the booking submit remains clear and neutral. */
+.button { border:1px solid var(--line); background:var(--soft-mint); color:var(--ink); }
+.button:hover { background:var(--soft-yellow); }
+.hero .button { background:var(--soft-mint); border-color:#C9DFD4; color:var(--ink); }
+.location-section .location-book-button { background:var(--soft-mint); border-color:#C9DFD4; color:var(--ink); }
+.booking-form .button { background:var(--ink); border-color:var(--ink); color:#fff; }
+.booking-form .button:hover { background:#4A4D52; }
+.regular-policy-note { color:#6E4C3A; }
+
+/* Text-led accents: remove boxes from the hero and let colour carry hierarchy. */
+:root { --gold:#B8860B; --amber:#D97706; --bronze:#B87333; }
+.hero-badge {
+  display:block;
+  width:auto;
+  margin:0 0 16px;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  color:#FFFFFF !important;
+  font:600 13px/1.3 "DM Sans",system-ui,sans-serif;
+  letter-spacing:.11em;
+}
+.registration-badge {
+  display:block;
+  width:auto;
+  margin-top:13px;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  color:#F5D061 !important;
+  font:600 clamp(22px,2.7vw,35px)/1.08 "Cormorant Garamond",Georgia,serif;
+  letter-spacing:0;
+}
+
+/* Sage and amber replace broad grey fills on labels, prices, and links. */
+.eyebrow,.sessions-label,.regular-kicker,.regular-content-box h3,.regular-overview-list dt { color:#4A4D52 !important; }
+.price,.one-day-options .price strong,.card-meta { color:var(--bronze) !important; }
+.regular-price { padding:0; border:0; border-radius:0; background:transparent; color:var(--bronze); }
+.regular-price::before { color:#4A4D52; }
+.regular-overview-list div:first-child dd [data-course="regular.dates"],
+.regular-overview-list div:nth-child(2) dd { display:inline; padding:0; border-radius:0; background:transparent; color:#2B2D31; font-weight:800; }
+.text-link,.text-link span { color:#2B2D31 !important; }
+.text-link:hover,.text-link:hover span { color:var(--amber) !important; }
+
+/* Clean white cards with quiet borders, rather than coloured block fills. */
+.program-card,.one-day-options article,.class-card,.event-card,.payment-section,.regular-content-box { background:#FFFFFF; border-color:#EAEAEA; }
+.program-card h3,.one-day-options h3,.class-card h3,.event-card h3 { color:#2B2D31; }
+.events-section { background:var(--paper); color:var(--ink); }
+.event-card p { color:var(--muted); }
+.event-card .event-fees { gap:16px; }
+.event-fee,.event-fee:nth-child(2) { padding:0; border:0; border-radius:0; background:transparent; }
+.event-fee b { color:#4A4D52; }
+.event-fee span { color:var(--bronze); font-size:16px; }
+.event-notes { background:#FFFFFF; border-color:#EAEAEA; }
+.one-day-notes { background:transparent; border-color:#EAEAEA; }
+.one-day-notes span::before { color:#4A4D52; }
+
+/* Location has one unambiguous, welcoming primary action. */
+.location-actions { gap:20px; }
+.location-section .location-book-button { background:var(--button-mint); border-color:var(--button-mint); color:#FFFFFF; }
+.location-section .location-book-button:hover { background:var(--button-mint-hover); border-color:var(--button-mint-hover); color:#FFFFFF; }
+
+/* Full-bleed header surface with a centered, predictable content grid. */
+.site-header {
+  width:100%;
+  height:auto;
+  margin:0;
+  padding:0;
+  display:block;
+  background:#FFFFFF;
+  border-color:var(--line);
+}
+.header-inner {
+  width:100%;
+  max-width:1200px;
+  height:88px;
+  margin:0 auto;
+  padding:6px 24px;
+  display:grid;
+  grid-template-columns:210px minmax(0,1fr) auto;
+  align-items:center;
+  column-gap:16px;
+}
+
+/* Mint notice surfaces and neutral text links. */
+.refund-policy,.notice {
+  background:#F0F6F3;
+  border:1px solid #D5E5DC;
+}
+.location-section .location-book-button { background:var(--button-mint); border-color:var(--button-mint); }
+.text-link,.text-link span,.eyebrow,.sessions-label,.regular-kicker,.regular-content-box h3,.regular-overview-list dt { color:#2B2D31 !important; }
+
+/* Buttons use the same bright mint action colour throughout. */
+.button,.hero .button { background:var(--button-mint); border-color:var(--button-mint); color:#FFFFFF; }
+.button:hover,.hero .button:hover { background:var(--button-mint-hover); border-color:var(--button-mint-hover); color:#FFFFFF; }
+.regular-policy-note { color:#DA291C; }
+
+/* Mint actions and mint information pills. */
+.site-header .header-book-now,.site-header .header-book-now:hover {
+  background:var(--button-mint);
+  border-color:var(--button-mint);
+  color:#FFFFFF;
+}
+.regular-price {
+  padding:10px 14px;
+  border:1px solid #D5E5DC;
+  border-radius:8px;
+  background:#E8F3EE;
+  color:#2B2D31;
+}
+.regular-price::before { color:#666666; }
+.one-day-options .price {
+  width:max-content;
+  padding:8px 11px;
+  border:1px solid #D5E5DC;
+  border-radius:8px;
+  background:#E8F3EE;
+}
+.one-day-options .price strong,.card-meta { color:#2B2D31 !important; }
+.card-meta {
+  display:inline-block;
+  margin-top:12px;
+  padding:7px 10px;
+  border:1px solid #D5E5DC;
+  border-radius:8px;
+  background:#E8F3EE;
+}
+.event-fee,.event-fee:nth-child(2) {
+  padding:9px 10px;
+  border:1px solid #D5E5DC;
+  border-radius:8px;
+  background:#E8F3EE;
+}
+.event-fee span { color:#2B2D31; }
+
+/* Critical palette override: actions are welcoming Sage Mint, never charcoal. */
+:root { --button-mint:#3B7A57; --button-mint-hover:#4A8B66; }
+.button,
+.hero .button,
+.booking-form .button,
+.location-section .location-book-button,
+.site-header .header-book-now,
+.site-header .header-book-now:hover {
+  background:var(--button-mint);
+  border-color:var(--button-mint);
+  color:#FFFFFF;
+}
+.button:hover,
+.hero .button:hover,
+.booking-form .button:hover,
+.location-section .location-book-button:hover {
+  background:var(--button-mint-hover);
+  border-color:var(--button-mint-hover);
+  color:#FFFFFF;
+}
+/* Gold is reserved for positive, editorial emphasis rather than container fills. */
+.program-card .eyebrow { color:#D97706 !important; }
+.registration-badge { color:#F5D061 !important; }
+
+/* Regular course: restrained gold timeline accents and high-contrast course data. */
+.regular-kicker { color:#D97706 !important; }
+.regular-curriculum-list strong { color:#D97706; font-weight:800; }
+.regular-price { color:#2B2D31; font-weight:900; }
+.regular-content-box h3,.regular-overview-list dt { color:#2B2D31 !important; }
+.regular-policy-note { color:#DA291C; }
+
+/* Targeted schedule and course overview highlights. */
+.site-header .header-book-now,
+.site-header .header-book-now:hover {
+  background:#DA291C;
+  border-color:#DA291C;
+  color:#FFFFFF;
+}
+.session-times span {
+  background:#E8F3EE;
+  border-color:#D5E5DC;
+  color:#2B2D31;
+}
+.session-times span:first-child {
+  background:#FFF8E7;
+  border-color:#E8D7A7;
+  color:#D97706;
+  font-weight:700;
+}
+.regular-overview-list div:first-child dd [data-course="regular.dates"],
+.regular-overview-list div:nth-child(2) dd {
+  color:#D97706 !important;
+  font-weight:800;
+}
+
+/* Search-friendly, visible FAQ content with the same calm site styling. */
+.faq-page { max-width:960px; margin:0 auto; padding:clamp(56px,8vw,104px) 24px; }
+.faq-intro { max-width:700px; margin-bottom:34px; }
+.faq-intro h1 { margin-bottom:16px; color:#2B2D31; font-size:clamp(46px,6vw,76px); }
+.faq-intro p:last-child { margin:0; color:#4A4D52; font-size:18px; }
+.faq-list { display:grid; gap:12px; }
+.faq-list-title { margin:0 0 6px; color:#2B2D31; font-size:clamp(32px,4vw,46px); }
+.faq-list details { border:1px solid #D5E5DC; background:#F0F6F3; }
+.faq-list summary { padding:19px 22px; color:#2B2D31; cursor:pointer; font-size:17px; font-weight:700; }
+.faq-list p { max-width:70ch; margin:0; padding:0 22px 20px; color:#4A4D52; }
+.faq-list a { color:#2B2D31; font-weight:700; text-underline-offset:4px; }
+footer a { color:inherit; text-underline-offset:4px; }
+@media (max-width:760px) { .faq-list summary { padding:16px 18px; } .faq-list p { padding:0 18px 17px; } }
+
+/* Classes page SEO introduction: a visible, page-level heading before course sections. */
+.classes-intro { max-width:860px; margin:0 auto; padding:clamp(54px,8vw,94px) clamp(24px,8vw,130px) 8px; text-align:center; }
+.classes-intro h1 { margin-bottom:18px; color:#2B2D31; font-size:clamp(44px,6vw,78px); }
+.classes-intro p:last-child { max-width:720px; margin:0 auto; color:#4A4D52; font-size:18px; }
+
+/* Schedule times and prices: colour-only emphasis, without rounded price containers. */
+.session-times span,
+.session-times span:first-child {
+  background:#FFF8E7;
+  border:1px solid #F59E0B;
+  color:#2B2D31;
+  font-weight:600;
+}
+.one-day-options .price {
+  width:auto;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+}
+.one-day-options .price strong { color:#D97706 !important; font-weight:800; }
+.one-day-options .price span { color:#666666; }
+.regular-price {
+  display:flex;
+  align-items:baseline;
+  gap:7px;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+}
+.regular-price::before { display:none; }
+.regular-price .price-amount { color:#D97706; font-weight:900; }
+.regular-price .price-suffix { color:#666666; font:600 16px/1.2 "DM Sans",system-ui,sans-serif; }
+
+/* Shared mobile navigation: visible hamburger, high stacking order, and dropdown menu. */
+.mobile-menu-toggle { display:none; }
+@media (max-width:760px) {
+  .site-header { position:relative; z-index:1000; overflow:visible; }
+  .header-inner { position:relative; justify-content:space-between; }
+  .site-header .header-book-now { display:none; }
+  .mobile-menu-toggle {
+    width:44px;
+    height:44px;
+    margin-left:auto;
+    padding:10px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    border:1px solid #D5E5DC;
+    border-radius:4px;
+    background:#FFFFFF;
+    cursor:pointer;
+  }
+  .mobile-menu-toggle span {
+    display:block;
+    width:22px;
+    height:2px;
+    margin:0 auto;
+    background:#2B2D31;
+    transition:transform .2s ease, opacity .2s ease;
+  }
+  .mobile-menu-toggle.is-open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+  .mobile-menu-toggle.is-open span:nth-child(2) { opacity:0; }
+  .mobile-menu-toggle.is-open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+  .site-header .primary-nav {
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    display:none;
+    width:100%;
+    margin:0;
+    padding:10px 18px 18px;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    border-top:1px solid #EAEAEA;
+    border-bottom:1px solid #D5E5DC;
+    background:#FFFFFF;
+    box-shadow:0 14px 28px rgba(43,45,49,.12);
+  }
+  .site-header .primary-nav.is-open { display:flex; }
+  .site-header .primary-nav a,
+  .site-header .primary-nav > a:not(.button) {
+    display:block;
+    padding:13px 4px;
+    border-bottom:1px solid #EAEAEA;
+    color:#2B2D31;
+    font-size:16px;
+    text-decoration:none;
+  }
+  .site-header .primary-nav a:last-child { border-bottom:0; }
+  .site-header .primary-nav a.active { color:#D97706; font-weight:700; }
+}
+
+@media (max-width:1100px) {
+  .header-inner { grid-template-columns:180px minmax(0,1fr) auto; column-gap:10px; }
+}
+@media (max-width:760px) {
+  .site-header { width:100%; height:auto; padding:0; }
+  .header-inner { height:78px; padding:6px 18px; display:flex; }
+}
+
+/* Dedicated course landing pages: semantic, focused pages for local search and booking. */
+.course-landing { max-width:1120px; margin:0 auto; padding:clamp(52px,7vw,92px) 24px; }
+.course-landing-intro { max-width:760px; margin-bottom:clamp(34px,5vw,58px); }
+.course-landing-intro h1 { margin:10px 0 16px; color:#2B2D31; font-size:clamp(48px,6vw,78px); line-height:.98; }
+.course-landing-intro > p:last-child { max-width:680px; margin:0; color:#4A4D52; font-size:18px; line-height:1.65; }
+.course-landing-grid { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(340px,.95fr); gap:clamp(24px,4vw,54px); align-items:stretch; }
+.course-landing-image { min-height:0; margin:0; border:1px solid #DCDFE3; background:#FFFFFF; }
+.course-landing-image img { display:block; width:100%; height:340px; object-fit:cover; }
+.course-landing-image figcaption { padding:11px 14px; color:#71767A; font-size:13px; }
+.course-landing-details,.course-options,.course-notice,.course-location { border:1px solid #DCDFE3; background:#FFFFFF; }
+.course-landing-details { display:flex; flex-direction:column; justify-content:center; padding:clamp(24px,4vw,40px); }
+.course-landing-details h2,.course-options h2,.course-notice h2,.course-location h2 { margin:0 0 20px; color:#2B2D31; font-size:clamp(28px,3vw,38px); }
+.course-facts { display:grid; gap:0; margin:0 0 26px; }
+.course-facts div { display:grid; grid-template-columns:128px 1fr; gap:12px; padding:12px 0; border-top:1px solid #DCDFE3; }
+.course-facts div:last-child { border-bottom:1px solid #DCDFE3; }
+.course-facts dt { color:#71767A; font:700 12px/1.4 "DM Sans",system-ui,sans-serif; letter-spacing:.1em; text-transform:uppercase; }
+.course-facts dd { margin:0; color:#2B2D31; line-height:1.55; }
+.course-facts dd strong { color:#D97706; font-size:18px; }
+.course-landing-details .button { align-self:flex-start; }
+.course-options { margin-top:28px; padding:clamp(24px,4vw,38px); }
+.course-option-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+.course-option-grid article { padding:22px; border:1px solid #DCDFE3; background:#F8F6F0; }
+.course-option-grid h3 { margin:8px 0 14px; color:#2B2D31; font-size:28px; }
+.course-option-grid p { margin:8px 0; color:#4A4D52; }
+.course-curriculum { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px 24px; margin:0; padding:0; list-style:none; }
+.course-curriculum li { display:flex; flex-direction:column; gap:4px; padding:14px 0; border-top:1px solid #DCDFE3; color:#4A4D52; }
+.course-curriculum strong { color:#D97706; font-size:14px; }
+.course-notice,.course-location { margin-top:28px; padding:clamp(22px,3vw,32px); }
+.course-notice { background:#E8F3EE; border-color:#D5E5DC; }
+.course-notice p,.course-location p { max-width:780px; margin:0; color:#4A4D52; line-height:1.65; }
+.course-location address { margin:0; color:#2B2D31; font-size:18px; line-height:1.6; }
+.course-location p { margin-top:16px; }
+@media (max-width:760px) {
+  .course-landing { padding:46px 18px; }
+  .course-landing-grid,.course-option-grid,.course-curriculum { grid-template-columns:1fr; }
+  .course-landing-image img { height:240px; }
+  .course-facts div { grid-template-columns:1fr; gap:4px; }
+  .course-landing-details .button { width:100%; }
+}

@@ -1,5 +1,31 @@
 const bookingForm = document.querySelector('#booking-form');
 const formAlert = document.querySelector('#form-alert');
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+const primaryNavigation = document.querySelector('.primary-nav');
+
+if (mobileMenuToggle && primaryNavigation) {
+  const closeMobileMenu = () => {
+    primaryNavigation.classList.remove('is-open');
+    mobileMenuToggle.classList.remove('is-open');
+    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+    mobileMenuToggle.setAttribute('aria-label', 'Open navigation menu');
+  };
+
+  mobileMenuToggle.addEventListener('click', () => {
+    const isOpen = primaryNavigation.classList.toggle('is-open');
+    mobileMenuToggle.classList.toggle('is-open', isOpen);
+    mobileMenuToggle.setAttribute('aria-expanded', String(isOpen));
+    mobileMenuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+  });
+
+  primaryNavigation.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeMobileMenu();
+  });
+}
 
 const courseConfig = window.courseConfig;
 
