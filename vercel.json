@@ -1,5 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "outputDirectory": ".",
-  "cleanUrls": false
+  "cleanUrls": false,
+  "rewrites": [
+    { "source": "/public/assets/(.*)", "destination": "/$1" },
+    { "source": "/data/courses.js", "destination": "/courses.js" }
+  ]
 }
