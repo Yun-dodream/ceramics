@@ -1,24 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.dodreamceramic.com/</loc>
+    <lastmod>2026-09-08</lastmod>
+    <image:image><image:loc>https://www.dodreamceramic.com/public/assets/main.jpg</image:loc><image:title>Pottery wheel class at Dodream Ceramic Studio</image:title></image:image>
   </url>
   <url>
     <loc>https://www.dodreamceramic.com/classes.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <image:image><image:loc>https://www.dodreamceramic.com/public/assets/onedaya.jpg</image:loc><image:title>One-day pottery class in New Westminster</image:title></image:image>
   </url>
   <url>
     <loc>https://www.dodreamceramic.com/booking.html</loc>
+    <lastmod>2026-09-08</lastmod>
   </url>
   <url>
     <loc>https://www.dodreamceramic.com/faq.html</loc>
+    <lastmod>2026-09-08</lastmod>
   </url>
   <url>
     <loc>https://www.dodreamceramic.com/one-day-pottery-class-new-westminster</loc>
+    <lastmod>2026-09-08</lastmod>
+    <image:image><image:loc>https://www.dodreamceramic.com/public/assets/onedaya.jpg</image:loc><image:title>One-day pottery class at Dodream Ceramic Studio</image:title></image:image>
   </url>
   <url>
     <loc>https://www.dodreamceramic.com/wheel-throwing-course-new-westminster</loc>
+    <lastmod>2026-09-08</lastmod>
+    <image:image><image:loc>https://www.dodreamceramic.com/public/assets/regular.jpg</image:loc><image:title>Wheel throwing course in New Westminster</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.dodreamceramic.com/drop-in-pottery-class-new-westminster</loc>
+    <lastmod>2026-09-08</lastmod>
+    <image:image><image:loc>https://www.dodreamceramic.com/public/assets/dropa.JPG</image:loc><image:title>Drop-in pottery class in New Westminster</image:title></image:image>
   </url>
   <url>
     <loc>https://www.dodreamceramic.com/pottery-birthday-party-metro-vancouver</loc>
+    <lastmod>2026-09-07</lastmod>
+    <image:image><image:loc>https://www.dodreamceramic.com/public/assets/eventb.jpg</image:loc><image:title>Pottery birthday party in Metro Vancouver</image:title></image:image>
   </url>
 </urlset>
