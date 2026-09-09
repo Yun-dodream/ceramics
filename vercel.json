@@ -2,9 +2,16 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "outputDirectory": ".",
   "cleanUrls": false,
+  "redirects": [
+    { "source": "/one-day-pottery-class-new-westminster.html", "destination": "/one-day-pottery-class-new-westminster", "permanent": true },
+    { "source": "/wheel-throwing-course-new-westminster.html", "destination": "/wheel-throwing-course-new-westminster", "permanent": true },
+    { "source": "/drop-in-pottery-class-new-westminster.html", "destination": "/drop-in-pottery-class-new-westminster", "permanent": true },
+    { "source": "/pottery-birthday-party-metro-vancouver.html", "destination": "/pottery-birthday-party-metro-vancouver", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/one-day-pottery-class-new-westminster", "destination": "/one-day-pottery-class-new-westminster.html" },
     { "source": "/wheel-throwing-course-new-westminster", "destination": "/wheel-throwing-course-new-westminster.html" },
+    { "source": "/drop-in-pottery-class-new-westminster", "destination": "/drop-in-pottery-class-new-westminster.html" },
     { "source": "/pottery-birthday-party-metro-vancouver", "destination": "/pottery-birthday-party-metro-vancouver.html" },
     { "source": "/public/assets/(.*)", "destination": "/$1" },
     { "source": "/data/courses.js", "destination": "/courses.js" }
