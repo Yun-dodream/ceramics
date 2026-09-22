@@ -7,7 +7,7 @@ window.courseConfig = {
     typeB: { capacity: "Max 20 people", price: "$95", priceSuffix: "/ person" }
   },
   regular: {
-    dates: "Sept 17 – Oct 22",
+    dates: "Oct 15 – Nov 19",
     schedule: "Every Thursday for 6 Weeks",
     time: "6:00 PM – 8:00 PM",
     capacity: "Max 4 students",
