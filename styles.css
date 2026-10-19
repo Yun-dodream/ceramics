@@ -664,3 +664,11 @@ footer a { color:inherit; text-underline-offset:4px; }
   text-transform:uppercase;
 }
 .regular-session-list > span > span { color:#2B2D31; font-weight:700; }
+
+
+/* Regular Course: match One-Day warm time pills. */
+.regular-schedule-highlight { color:#B7791F !important; font-size:17px; font-weight:800; letter-spacing:.01em; }
+.regular-overview-list .regular-session-row dd.regular-session-times { display:flex !important; flex-wrap:wrap; gap:9px; padding:0; background:transparent; }
+.regular-session-times > span { flex:1 1 160px; min-width:0; padding:8px 14px; border:1px solid #F59E0B; border-radius:999px; background:#FFF8E7; text-align:center; }
+.regular-session-times b { display:block !important; color:#71767A; font:700 10px/1.2 "DM Sans",system-ui,sans-serif; letter-spacing:.1em; text-transform:uppercase; }
+.regular-session-times em { display:block !important; margin-top:3px; color:#2B2D31; font-style:normal; font-weight:700; white-space:nowrap; }
