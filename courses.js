@@ -9,7 +9,9 @@ window.courseConfig = {
   regular: {
     dates: "Nov 6 – Dec 11",
     schedule: "Every Friday for 6 Weeks",
-    time: "6:00 PM – 8:00 PM",
+    weekday: "Every Friday",
+    morningTime: "10:00 AM – 12:00 PM",
+    eveningTime: "6:00 PM – 8:00 PM",
     capacity: "Max 4 students",
     priceAmount: "$320",
     priceSuffix: "+ GST",
