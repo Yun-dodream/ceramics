@@ -1,3 +1,4 @@
+
 :root { --ink:#22201d; --paper:#f8f5ee; --clay:#b44024; --line:#dcd4c6; --muted:#69635c; --dark:#25211d; }
 * { box-sizing:border-box; } html { scroll-behavior:smooth; } body { margin:0; color:var(--ink); background:var(--paper); font:17px/1.6 "DM Sans",sans-serif; } img { display:block; width:100%; }
 .site-header { height:104px; padding:8px clamp(20px,4vw,64px); display:flex; align-items:center; justify-content:flex-start; gap:18px; background:var(--paper); position:sticky; top:0; z-index:10; border-bottom:1px solid var(--line); }
@@ -643,3 +644,23 @@ footer a { color:inherit; text-underline-offset:4px; }
   .course-facts div { grid-template-columns:1fr; gap:4px; }
   .course-landing-details .button { width:100%; }
 }
+
+/* Clearly separate the two Friday session options. */
+.regular-overview-list .regular-session-row dd.regular-session-list {
+  display:grid !important;
+  gap:6px;
+  padding:0;
+  background:transparent;
+  color:#2B2D31 !important;
+  font-weight:400;
+}
+.regular-session-list > span { display:block; }
+.regular-session-list b {
+  display:inline-block;
+  min-width:76px;
+  color:#71767A;
+  font:700 10px/1.4 "DM Sans",system-ui,sans-serif;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.regular-session-list > span > span { color:#2B2D31; font-weight:700; }
