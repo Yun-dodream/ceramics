@@ -672,3 +672,22 @@ footer a { color:inherit; text-underline-offset:4px; }
 .regular-session-times > span { flex:1 1 160px; min-width:0; padding:8px 14px; border:1px solid #F59E0B; border-radius:999px; background:#FFF8E7; text-align:center; }
 .regular-session-times b { display:block !important; color:#71767A; font:700 10px/1.2 "DM Sans",system-ui,sans-serif; letter-spacing:.1em; text-transform:uppercase; }
 .regular-session-times em { display:block !important; margin-top:3px; color:#2B2D31; font-style:normal; font-weight:700; white-space:nowrap; }
+
+
+/* Booking form: keep third-party form errors inside the page. */
+.form-alert[hidden] { display:none; }
+.form-alert {
+  grid-column:1 / -1;
+  margin:0;
+  padding:14px 16px;
+  border:1px solid #DCDFE3;
+  color:#2B2D31;
+  background:#FFFFFF;
+  font-weight:600;
+  line-height:1.5;
+}
+.form-alert.is-error { border-color:#E6B9B4; background:#FFF4F2; color:#8A2017; }
+.form-alert.is-success { border-color:#BFD9CC; background:#E8F3EE; color:#2B5A42; }
+.form-alert a { color:inherit; font-weight:700; text-underline-offset:3px; }
+.booking-form[aria-busy="true"] .button { cursor:wait; opacity:.72; }
+.booking-form .button:disabled { cursor:wait; }
