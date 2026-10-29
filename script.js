@@ -36,16 +36,73 @@ if (courseConfig) {
   });
 }
 
-if (bookingForm) {
-  bookingForm.addEventListener('submit', (event) => {
+if (bookingForm && formAlert) {
+  const submitButton = bookingForm.querySelector('button[type="submit"]');
+  const defaultButtonText = submitButton?.textContent || 'Send';
+
+  const showFormMessage = (message, type, allowLinks = false) => {
+    formAlert.hidden = false;
+    formAlert.className = `form-alert is-${type}`;
+    formAlert.setAttribute('role', type === 'error' ? 'alert' : 'status');
+
+    if (allowLinks) {
+      formAlert.innerHTML = message;
+    } else {
+      formAlert.textContent = message;
+    }
+  };
+
+  const hideFormMessage = () => {
+    formAlert.hidden = true;
+    formAlert.className = 'form-alert';
+    formAlert.textContent = '';
+  };
+
+  bookingForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
     if (!bookingForm.checkValidity()) {
-      event.preventDefault();
-      formAlert.hidden = false;
-      formAlert.focus();
-      bookingForm.querySelector(':invalid').focus();
+      showFormMessage('Please fill out all required fields.', 'error');
+      bookingForm.querySelector(':invalid')?.focus();
+      return;
+    }
+
+    hideFormMessage();
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending…';
+    }
+    bookingForm.setAttribute('aria-busy', 'true');
+
+    try {
+      const response = await fetch(bookingForm.action, {
+        method: bookingForm.method || 'POST',
+        body: new FormData(bookingForm),
+        headers: { Accept: 'application/json' }
+      });
+
+      if (!response.ok) {
+        throw new Error(`Form service returned ${response.status}`);
+      }
+
+      bookingForm.reset();
+      showFormMessage('Thank you — your booking request has been sent. We will get back to you soon.', 'success');
+    } catch (error) {
+      showFormMessage(
+        'We could not send your request right now. Please try again shortly, or contact us directly at <a href="mailto:dodreamceramic@gmail.com">dodreamceramic@gmail.com</a> or <a href="tel:+17788682264">+1 (778) 868-2264</a>.',
+        'error',
+        true
+      );
+    } finally {
+      bookingForm.removeAttribute('aria-busy');
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = defaultButtonText;
+      }
     }
   });
+
   bookingForm.addEventListener('input', () => {
-    if (bookingForm.checkValidity()) formAlert.hidden = true;
+    if (formAlert.classList.contains('is-error')) hideFormMessage();
   });
 }
